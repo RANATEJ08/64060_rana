@@ -1,0 +1,67 @@
+---
+title: "FML_Assignment1"
+author: "Rana Prudhvi Tej"
+date: "2023-09-24"
+output:
+  pdf_document: default
+  word_document: default
+  html_document: default
+---
+#Downloaded the dataset called " Class12-2023 from the source:https://www.kaggle.com/datasets/fiq423ubf/cbse-result-statistics-class-xii-2023
+
+```{r}
+#Read the Dataset which was downloaded and load into a Dataframe Rana_file
+Rana_file <-read.csv("C:/Users/navya/Downloads/class12-2023 (1) 2.csv")
+#prints out the full data set
+Rana_file
+```
+#descriptive statistics for numeric variable
+```{r}
+summary(Rana_file)
+
+mean(Rana_file$JNV)
+
+median(Rana_file$JNV)
+
+sd(Rana_file$JNV)
+
+var(Rana_file$JNV)
+
+min(Rana_file$JNV)
+
+max(Rana_file$JNV)
+
+str(Rana_file$JNV)
+
+
+```
+
+#descriptive statistics for categorical variables
+
+```{r}
+table(Rana_file$Status)
+
+str(Rana_file$status)
+```
+
+#transforming variables
+```{r}
+log(Rana_file$JNV)
+
+log(Rana_file$INDEPENDENT)
+
+R<-Rana_file$JNV-Rana_file$INDEPENDENT-max(Rana_file$JNV)/min(Rana_file$JNV)
+
+R
+```
+#plotting variable
+
+```{r}
+hist(Rana_file$JNV,main = "HISTOGRAM OF JNV")
+```
+#scatterplot of 2 variables
+
+```{r}
+plot(Rana_file$JNV,Rana_file$INDEPENDENT,main = "scatterplot")
+```
+
